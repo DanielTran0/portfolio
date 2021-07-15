@@ -1,0 +1,13 @@
+@import './util';
+
+.navbar {
+	display: flex;
+	padding: 10px;
+
+	.menu {
+		width: 35px;
+		margin-left: auto;
+		border: none;
+		background-color: $blue;
+	}
+}
