@@ -68,6 +68,11 @@ button a:hover {
   background-color: #ededed;
 }
 
+.section-4 {
+  border-top-right-radius: 80px;
+  background-color: #354a5f;
+}
+
 .navbar {
   display: flex;
   padding: 10px;
@@ -94,7 +99,7 @@ button a:hover {
 }
 .intro button {
   margin-bottom: 25px;
-  padding: 15px 20px;
+  padding: 15px 25px;
   border-radius: 30px;
   border: none;
   color: white;
@@ -150,7 +155,7 @@ button a:hover {
   padding: 10px;
 }
 .projects h1 {
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 20px;
   text-align: center;
   color: black;
@@ -208,6 +213,50 @@ button a:hover {
   font-size: 20px;
   color: white;
   background-color: #262626;
+}
+
+.contact {
+  padding: 10px;
+}
+.contact h1 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.contact form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+}
+.contact form .field {
+  width: 100%;
+  padding: 10px 0px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 2px white solid;
+  font-family: inherit;
+  font-size: 18px;
+  color: white;
+  background-color: inherit;
+}
+.contact form .field:focus {
+  outline-width: 0;
+}
+.contact form .error {
+  border-color: red;
+}
+.contact form .error-text {
+  margin-top: -10px;
+  color: red;
+}
+.contact form .submit {
+  padding: 15px 25px;
+  border-radius: 30px;
+  border: none;
+  font-size: 18px;
+  color: white;
+  background-color: #00bda4;
 }
 
 /*# sourceMappingURL=app.css.map */

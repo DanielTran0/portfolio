@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import './styles/app.css';
+import Contact from './components/Contact';
 
 const App = () => {
 	return (
@@ -19,6 +20,10 @@ const App = () => {
 
 			<div className='section-3'>
 				<Projects />
+
+				<div className='section-4'>
+					<Contact />
+				</div>
 			</div>
 		</div>
 	);

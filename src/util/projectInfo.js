@@ -54,7 +54,7 @@ const main = [
 		icon: gameIcon,
 		title: 'Game Inventory',
 		images: [game1, game2],
-		description: 'Track game titles, developer and genre.',
+		description: 'Track game titles, developers and genres.',
 		skills: [PostgreSQL, Express, Node, Pug, Sass],
 		code: 'https://github.com/DanielTran0/game-inventory',
 		site: 'https://rocky-shelf-43502.herokuapp.com/',
