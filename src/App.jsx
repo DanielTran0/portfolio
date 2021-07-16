@@ -2,6 +2,7 @@ import React from 'react';
 import Intro from './components/Intro';
 import Navbar from './components/Navbar';
 import Skills from './components/Skills';
+import Projects from './components/Projects';
 import './styles/app.css';
 
 const App = () => {
@@ -14,6 +15,10 @@ const App = () => {
 
 			<div className='section-2'>
 				<Skills />
+			</div>
+
+			<div className='section-3'>
+				<Projects />
 			</div>
 		</div>
 	);

@@ -6,7 +6,7 @@ const SkillIcon = ({ imageUrl }) => {
 
 	return (
 		<div className='icon'>
-			<img src={imageUrl} alt='' />
+			<img src={imageUrl} alt={skillName} />
 			<p>{skillName}</p>
 		</div>
 	);

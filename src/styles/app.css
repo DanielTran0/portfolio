@@ -34,15 +34,38 @@ img {
   height: auto;
 }
 
+@font-face {
+  font-family: "mortal_kombatmk11";
+  src: url("/src/styles/fonts/mk/mortal-kombat-mk11-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   font-family: "Montserrat", sans-serif;
   color: white;
   background-color: #262626;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+button a:hover {
+  text-decoration: none;
+}
+
 .section-1 {
-  background-color: #354a5f;
   border-bottom-right-radius: 80px;
+  background-color: #354a5f;
+}
+
+.section-3 {
+  border-top-left-radius: 80px;
+  background-color: #ededed;
 }
 
 .navbar {
@@ -83,16 +106,18 @@ body {
   padding: 10px;
 }
 .skills-section h1 {
-  margin: 20px 0px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 .skills-section .groups .front,
 .skills-section .groups .back,
 .skills-section .groups .misc {
   padding: 10px;
 }
-.skills-section .groups .front h3,
-.skills-section .groups .back h3,
-.skills-section .groups .misc h3 {
+.skills-section .groups .front h2,
+.skills-section .groups .back h2,
+.skills-section .groups .misc h2 {
   margin-bottom: 10px;
   text-align: center;
 }
@@ -119,6 +144,70 @@ body {
   padding: 5px;
   border-radius: 10px;
   background-color: white;
+}
+
+.projects {
+  padding: 10px;
+}
+.projects h1 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: black;
+}
+.projects .group {
+  display: flex;
+  flex-wrap: wrap;
+}
+.projects .group .card {
+  margin-bottom: 20px;
+  padding: 15px 0px;
+  border-radius: 25px;
+  background-color: red;
+}
+.projects .group .card .header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+.projects .group .card .header img {
+  width: 40px;
+  margin: 0px 8px;
+}
+.projects .group .card .details {
+  padding: 10px;
+  margin: 10px 0px;
+  text-align: center;
+}
+.projects .group .card .details p {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+.projects .group .card .details .skills {
+  display: flex;
+  justify-content: space-around;
+}
+.projects .group .card .details .skills img {
+  width: 40px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: white;
+}
+.projects .group .card .details .skills p {
+  display: none;
+}
+.projects .group .card .links {
+  display: flex;
+  justify-content: space-around;
+}
+.projects .group .card .links button {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 30px;
+  font-size: 20px;
+  color: white;
+  background-color: #262626;
 }
 
 /*# sourceMappingURL=app.css.map */

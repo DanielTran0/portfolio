@@ -32,7 +32,7 @@ const Skills = () => {
 
 			<div className='groups'>
 				<div className='front'>
-					<h3>Front End</h3>
+					<h2>Front End</h2>
 					<div className='group'>
 						{frontEnd.map((skill) => (
 							<SkillIcon imageUrl={skill} key={skill} />
@@ -41,7 +41,7 @@ const Skills = () => {
 				</div>
 
 				<div className='back'>
-					<h3>Back End</h3>
+					<h2>Back End</h2>
 					<div className='group'>
 						{backEnd.map((skill) => (
 							<SkillIcon imageUrl={skill} key={skill} />
@@ -50,7 +50,7 @@ const Skills = () => {
 				</div>
 
 				<div className='misc'>
-					<h3>Miscellaneous</h3>
+					<h2>Miscellaneous</h2>
 					<div className='group'>
 						{misc.map((skill) => (
 							<SkillIcon imageUrl={skill} key={skill} />

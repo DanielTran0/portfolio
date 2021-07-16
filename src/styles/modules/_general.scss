@@ -1,7 +1,31 @@
 @import './util';
+@font-face {
+	font-family: 'mortal_kombatmk11';
+	src: url('/src/styles/fonts/mk/mortal-kombat-mk11-webfont.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
 
 body {
 	font-family: 'Montserrat', sans-serif;
 	color: white;
 	background-color: $grey;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+button {
+	a {
+		&:hover {
+			text-decoration: none;
+		}
+	}
 }

@@ -1,6 +1,11 @@
 @import './util';
 
 .section-1 {
-	background-color: $blue;
 	border-bottom-right-radius: 80px;
+	background-color: $blue;
+}
+
+.section-3 {
+	border-top-left-radius: 80px;
+	background-color: hsla(0, 0%, 93%, 1);
 }
