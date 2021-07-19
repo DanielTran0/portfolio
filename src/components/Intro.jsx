@@ -8,7 +8,9 @@ const Intro = () => {
 			<h3>
 				A full stack web developer with a background in mechanical engineering.
 			</h3>
-			<button type='button'>My Projects</button>
+			<button type='button'>
+				<a href='#projects'>My Projects</a>
+			</button>
 			<img src={main} alt='main' />
 		</section>
 	);

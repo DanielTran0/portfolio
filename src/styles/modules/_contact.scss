@@ -1,6 +1,6 @@
 @import './util';
 
-.contact {
+#contact {
 	padding: 10px;
 
 	h1 {
@@ -42,11 +42,31 @@
 
 		.submit {
 			padding: 15px 25px;
+			margin-bottom: 15px;
 			border-radius: 30px;
 			border: none;
 			font-size: 18px;
 			color: white;
 			background-color: $green;
+		}
+	}
+
+	.links {
+		li {
+			display: flex;
+			align-items: center;
+			margin-bottom: 20px;
+			color: $greyText;
+		}
+
+		img {
+			width: 20px;
+			margin-right: 10px;
+		}
+
+		a:hover {
+			color: white;
+			text-decoration: none;
 		}
 	}
 }

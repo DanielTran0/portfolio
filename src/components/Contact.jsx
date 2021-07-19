@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import emailIcon from '../images/misc/email.svg';
+import gitHubIcon from '../images/misc/gitHub.svg';
 
 const Contact = () => {
 	const [formValues, setFormValues] = useState({
@@ -63,7 +65,7 @@ const Contact = () => {
 	};
 
 	return (
-		<div className='contact'>
+		<section id='contact'>
 			<h1>Contact</h1>
 
 			<form noValidate autoComplete='off' onSubmit={sendEmail}>
@@ -93,7 +95,20 @@ const Contact = () => {
 
 				<input className='submit' type='submit' value='Send Message' />
 			</form>
-		</div>
+
+			<ul className='links'>
+				<li>
+					<img src={emailIcon} alt='icon' />
+					<a href='mailto:danieltran770@gmail.com'>danieltran770@gmail.com</a>
+				</li>
+				<li>
+					<img src={gitHubIcon} alt='icon' />
+					<a href='https://github.com/DanielTran0' target='#blank'>
+						Github
+					</a>
+				</li>
+			</ul>
+		</section>
 	);
 };
 

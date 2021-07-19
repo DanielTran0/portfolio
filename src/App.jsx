@@ -1,18 +1,16 @@
 import React from 'react';
-import Intro from './components/Intro';
 import Navbar from './components/Navbar';
+import Intro from './components/Intro';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
-import './styles/app.css';
 import Contact from './components/Contact';
+import './styles/app.css';
 
 const App = () => {
 	return (
 		<div className='app'>
-			<div className='section-1'>
-				<Navbar />
-				<Intro />
-			</div>
+			<Navbar />
+			<Intro />
 
 			<div className='section-2'>
 				<Skills />

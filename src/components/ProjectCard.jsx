@@ -58,10 +58,14 @@ const ProjectCard = ({ info }) => {
 
 			<div className='links'>
 				<button type='button'>
-					<a href={code}>Code</a>
+					<a href={code} target='#blank'>
+						Code
+					</a>
 				</button>
 				<button type='button'>
-					<a href={site}>Site</a>
+					<a href={site} target='#blank'>
+						Site
+					</a>
 				</button>
 			</div>
 		</div>
