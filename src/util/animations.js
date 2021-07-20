@@ -1,4 +1,4 @@
-const up = (delay) => {
+const up = (duration, delay) => {
 	return {
 		start: {
 			opacity: 0,
@@ -8,8 +8,8 @@ const up = (delay) => {
 			opacity: 1,
 			y: '0px',
 			transition: {
-				duration: 0.8,
 				type: 'tween',
+				duration,
 				delay,
 			},
 		},

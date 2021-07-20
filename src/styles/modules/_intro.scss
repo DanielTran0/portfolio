@@ -37,7 +37,7 @@
 		font-size: 18px;
 		border: none;
 		background-color: $green;
-		transition: transform 300ms;
+		transition: transform 300ms, background-color 300ms;
 
 		&:hover {
 			transform: scale(1.1);

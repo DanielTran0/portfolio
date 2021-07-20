@@ -12,14 +12,8 @@ const App = () => {
 			<Navbar />
 			<Intro />
 			<Skills />
-
-			<div className='section-3'>
-				<Projects />
-
-				<div className='section-4'>
-					<Contact />
-				</div>
-			</div>
+			<Projects />
+			<Contact />
 		</div>
 	);
 };

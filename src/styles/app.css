@@ -70,11 +70,6 @@ button a:hover {
   max-width: clamp(10px, 100%, 1200px);
 }
 
-.section-3 {
-  border-top-left-radius: 80px;
-  background-color: #ededed;
-}
-
 .section-4 {
   border-top-right-radius: 80px;
   background-color: #354a5f;
@@ -193,7 +188,7 @@ button a:hover {
   font-size: 18px;
   border: none;
   background-color: #00bda4;
-  transition: transform 300ms;
+  transition: transform 300ms, background-color 300ms;
 }
 .intro button:hover {
   transform: scale(1.1);
@@ -234,26 +229,36 @@ button a:hover {
     max-width: 570px;
   }
 }
+.max-width, #skills-section .groups {
+  max-width: clamp(10px, 100%, 1200px);
+}
+
 #skills-section {
   padding: 10px;
 }
 #skills-section h1 {
-  margin-top: 40px;
-  margin-bottom: 20px;
+  margin: 20px 0px;
   text-align: center;
+  font-size: 30px;
 }
-#skills-section .groups .front,
-#skills-section .groups .back,
-#skills-section .groups .misc {
-  padding: 10px;
+#skills-section .groups {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
 }
-#skills-section .groups .front h2,
-#skills-section .groups .back h2,
-#skills-section .groups .misc h2 {
+#skills-section .front,
+#skills-section .back,
+#skills-section .misc {
+  width: 100%;
+  max-width: 300px;
+}
+#skills-section h2 {
   margin-bottom: 10px;
   text-align: center;
+  color: #00bda4;
 }
-#skills-section .groups .group {
+#skills-section .group {
   display: grid;
   grid-template-columns: 1fr 1fr;
   row-gap: 20px;
@@ -262,15 +267,23 @@ button a:hover {
   border-radius: 20px;
   background-color: black;
 }
-#skills-section .groups .group .icon {
+#skills-section .group .container {
+  display: flex;
+  justify-content: center;
+}
+#skills-section .group .container:nth-last-child(1):nth-child(odd) {
+  grid-column: 1/span 2;
+}
+#skills-section .group .icon {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: transform 300ms;
 }
-#skills-section .groups .group .icon:nth-last-child(1):nth-child(odd) {
-  grid-column: 1/span 2;
+#skills-section .group .icon:hover {
+  transform: scale(1.1);
 }
-#skills-section .groups .group .icon img {
+#skills-section .group .icon img {
   width: 50px;
   margin-bottom: 10px;
   padding: 5px;
@@ -278,16 +291,30 @@ button a:hover {
   background-color: white;
 }
 
+@media (min-width: 1024px) {
+  #skills-section {
+    margin-bottom: 50px;
+  }
+  #skills-section h1 {
+    margin: 50px 0px;
+    font-size: 40px;
+  }
+  #skills-section h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+}
 .max-width {
   max-width: clamp(10px, 100%, 1200px);
 }
 
 #projects {
   padding: 10px;
+  border-top-left-radius: 80px;
+  background-color: #ededed;
 }
 #projects h1 {
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin: 20px 0px;
   text-align: center;
   color: black;
 }
@@ -295,49 +322,49 @@ button a:hover {
   display: flex;
   flex-wrap: wrap;
 }
-#projects .group .card {
+#projects .card {
   margin-bottom: 20px;
-  padding: 15px 0px;
+  padding: 20px 0px;
   border-radius: 25px;
-  background-color: red;
+  max-width: 400px;
 }
-#projects .group .card .header {
+#projects .card .header {
   display: flex;
   align-items: center;
   padding: 10px;
   margin-bottom: 15px;
 }
-#projects .group .card .header img {
+#projects .card .header img {
   width: 40px;
   margin: 0px 8px;
 }
-#projects .group .card .details {
+#projects .card .details {
   padding: 10px;
   margin: 10px 0px;
   text-align: center;
 }
-#projects .group .card .details p {
+#projects .card .details p {
   margin-bottom: 15px;
   font-size: 18px;
 }
-#projects .group .card .details .skills {
+#projects .card .details .skills {
   display: flex;
   justify-content: space-around;
 }
-#projects .group .card .details .skills img {
+#projects .card .details .skills img {
   width: 40px;
   padding: 5px;
   border-radius: 10px;
   background-color: white;
 }
-#projects .group .card .details .skills p {
+#projects .card .details .skills p {
   display: none;
 }
-#projects .group .card .links {
+#projects .card .links {
   display: flex;
   justify-content: space-around;
 }
-#projects .group .card .links button {
+#projects .card .links button {
   padding: 10px 25px;
   border: none;
   border-radius: 30px;
@@ -346,23 +373,44 @@ button a:hover {
   background-color: #262626;
 }
 
-.max-width {
+.max-width, #contact .container {
   max-width: clamp(10px, 100%, 1200px);
 }
 
 #contact {
+  margin-top: -1px;
+  background-color: #ededed;
+}
+#contact .shell {
+  border-top-right-radius: 80px;
+  background-color: #354a5f;
+}
+#contact .container {
   padding: 10px;
+  margin: auto;
 }
 #contact h1 {
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin: 20px 0px;
   text-align: center;
+  font-size: 30px;
+}
+#contact p {
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 18px;
+  color: #ababab;
+}
+#contact .container2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 #contact form {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 10px;
+  max-width: 600px;
 }
 #contact form .field {
   width: 100%;
@@ -378,6 +426,10 @@ button a:hover {
 #contact form .field:focus {
   outline-width: 0;
 }
+#contact form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
 #contact form .error {
   border-color: red;
 }
@@ -387,26 +439,52 @@ button a:hover {
 }
 #contact form .submit {
   padding: 15px 25px;
-  margin-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 20px;
   border-radius: 30px;
   border: none;
   font-size: 18px;
   color: white;
   background-color: #00bda4;
+  background-color: #00bda4;
+  transition: transform 300ms, background-color 300ms;
+  cursor: pointer;
+}
+#contact form .submit:hover {
+  transform: scale(1.1);
+  background-color: transparent;
+  border: thin solid #00bda4;
+}
+#contact .links {
+  margin: auto;
 }
 #contact .links li {
-  display: flex;
-  align-items: center;
   margin-bottom: 20px;
   color: #ababab;
 }
 #contact .links img {
-  width: 20px;
-  margin-right: 10px;
+  width: 30px;
+  margin-right: 15px;
+}
+#contact .links a {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
 }
 #contact .links a:hover {
   color: white;
   text-decoration: none;
+}
+
+@media (min-width: 1024px) {
+  #contact h1 {
+    margin: 40px 0px;
+    font-size: 35px;
+  }
+  #contact p {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

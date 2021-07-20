@@ -6,27 +6,27 @@ import main from '../images/misc/main.svg';
 
 const Intro = () => {
 	const { up } = animations;
-	const firstAnimation = up(0);
-	const firstAnimate = {
-		variants: firstAnimation,
-		initial: firstAnimation.start,
-		animate: firstAnimation.end,
+	const animation1 = up(0.8, 0);
+	const animation2 = up(0.8, 0.4);
+	const animation3 = up(0.8, 0.7);
+	const animation1Props = {
+		variants: animation1,
+		initial: animation1.start,
+		animate: animation1.end,
 	};
-	const secondAnimation = up(0.4);
-	const thirdAnimation = up(0.7);
 
 	return (
 		<section className='intro'>
 			<div className='main'>
 				<div className='text'>
-					<motion.h1 {...firstAnimate}>Hey, I&apos;m Daniel Tran</motion.h1>
+					<motion.h1 {...animation1Props}>Hey, I&apos;m Daniel Tran</motion.h1>
 
-					<motion.h3 {...firstAnimate} animate={secondAnimation.end}>
+					<motion.h3 {...animation1Props} animate={animation2.end}>
 						A full stack web developer with a background in mechanical
 						engineering.
 					</motion.h3>
 
-					<motion.div {...firstAnimate} animate={secondAnimation.end}>
+					<motion.div {...animation1Props} animate={animation2.end}>
 						<a href='#projects'>
 							<button type='button'>My Projects</button>
 						</a>
@@ -36,8 +36,8 @@ const Intro = () => {
 				<motion.img
 					src={main}
 					alt='main'
-					{...firstAnimate}
-					animate={thirdAnimation.end}
+					{...animation1Props}
+					animate={animation3.end}
 				/>
 			</div>
 		</section>

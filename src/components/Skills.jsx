@@ -1,8 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import SkillIcon from './SkillIcon';
 import skillImages from '../util/loadSkillImages';
+import animations from '../util/animations';
 
 const Skills = () => {
+	const controls1 = useAnimation();
+	const controls2 = useAnimation();
+	const controls3 = useAnimation();
+	const [ref1, inView1] = useInView();
+	const [ref2, inView2] = useInView();
+	const [ref3, inView3] = useInView();
+	const animation1 = animations.up(0.5, 0);
+	const animationProps = {
+		variants: animation1,
+		initial: animation1.start,
+		animate: controls1,
+	};
+
+	useEffect(() => {
+		if (inView1) {
+			controls1.start('end');
+		}
+		if (inView2) {
+			controls2.start('end');
+		}
+		if (inView3) {
+			controls3.start('end');
+		}
+	}, [inView1, inView2, inView3]);
+
 	const {
 		CSS,
 		Express,
@@ -31,32 +59,48 @@ const Skills = () => {
 			<h1>Skills & Tools</h1>
 
 			<div className='groups'>
-				<div className='front'>
+				<motion.div className='front' ref={ref1} {...animationProps}>
 					<h2>Front End</h2>
 					<div className='group'>
 						{frontEnd.map((skill) => (
-							<SkillIcon imageUrl={skill} key={skill} />
+							<div className='container' key={skill}>
+								<SkillIcon imageUrl={skill} />
+							</div>
 						))}
 					</div>
-				</div>
+				</motion.div>
 
-				<div className='back'>
+				<motion.div
+					className='back'
+					ref={ref2}
+					{...animationProps}
+					animate={controls2}
+				>
 					<h2>Back End</h2>
 					<div className='group'>
 						{backEnd.map((skill) => (
-							<SkillIcon imageUrl={skill} key={skill} />
+							<div className='container' key={skill}>
+								<SkillIcon imageUrl={skill} />
+							</div>
 						))}
 					</div>
-				</div>
+				</motion.div>
 
-				<div className='misc'>
+				<motion.div
+					className='misc'
+					ref={ref3}
+					{...animationProps}
+					animate={controls3}
+				>
 					<h2>Miscellaneous</h2>
 					<div className='group'>
 						{misc.map((skill) => (
-							<SkillIcon imageUrl={skill} key={skill} />
+							<div className='container' key={skill}>
+								<SkillIcon imageUrl={skill} />
+							</div>
 						))}
 					</div>
-				</div>
+				</motion.div>
 			</div>
 		</section>
 	);

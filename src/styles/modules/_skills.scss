@@ -1,50 +1,86 @@
+@import './util';
+
 #skills-section {
 	padding: 10px;
 
 	h1 {
-		margin-top: 40px;
-		margin-bottom: 20px;
+		margin: 20px 0px;
 		text-align: center;
+		font-size: 30px;
 	}
 
 	.groups {
-		.front,
-		.back,
-		.misc {
-			padding: 10px;
+		@extend .max-width;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		margin: auto;
+	}
 
-			h2 {
-				margin-bottom: 10px;
-				text-align: center;
+	.front,
+	.back,
+	.misc {
+		width: 100%;
+		max-width: 300px;
+	}
+
+	h2 {
+		margin-bottom: 10px;
+		text-align: center;
+		color: $green;
+	}
+
+	.group {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		row-gap: 20px;
+		padding: 25px 0px;
+		margin-bottom: 20px;
+		border-radius: 20px;
+		background-color: black;
+
+		.container {
+			display: flex;
+			justify-content: center;
+
+			&:nth-last-child(1):nth-child(odd) {
+				grid-column: 1 / span 2;
 			}
 		}
 
-		.group {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			row-gap: 20px;
-			padding: 25px 0px;
-			margin-bottom: 20px;
-			border-radius: 20px;
-			background-color: black;
+		.icon {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			transition: transform 300ms;
 
-			.icon {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-
-				&:nth-last-child(1):nth-child(odd) {
-					grid-column: 1 / span 2;
-				}
-
-				img {
-					width: 50px;
-					margin-bottom: 10px;
-					padding: 5px;
-					border-radius: 10px;
-					background-color: white;
-				}
+			&:hover {
+				transform: scale(1.1);
 			}
+
+			img {
+				width: 50px;
+				margin-bottom: 10px;
+				padding: 5px;
+				border-radius: 10px;
+				background-color: white;
+			}
+		}
+	}
+}
+
+@media (min-width: 1024px) {
+	#skills-section {
+		margin-bottom: 50px;
+
+		h1 {
+			margin: 50px 0px;
+			font-size: 40px;
+		}
+
+		h2 {
+			margin-bottom: 20px;
+			font-size: 30px;
 		}
 	}
 }
