@@ -66,15 +66,6 @@ button a:hover {
   text-decoration: none;
 }
 
-.max-width {
-  max-width: clamp(10px, 100%, 1200px);
-}
-
-.section-4 {
-  border-top-right-radius: 80px;
-  background-color: #354a5f;
-}
-
 .max-width, #navbar .main {
   max-width: clamp(10px, 100%, 1200px);
 }
@@ -303,8 +294,14 @@ button a:hover {
     margin-bottom: 20px;
     font-size: 30px;
   }
+  #skills-section .group .icon img {
+    width: 60px;
+  }
+  #skills-section .group .icon p {
+    font-size: 18px;
+  }
 }
-.max-width {
+.max-width, #projects .group {
   max-width: clamp(10px, 100%, 1200px);
 }
 
@@ -316,63 +313,121 @@ button a:hover {
 #projects h1 {
   margin: 20px 0px;
   text-align: center;
+  font-size: 30px;
   color: black;
 }
 #projects .group {
   display: flex;
-  flex-wrap: wrap;
+  width: auto;
+  margin: auto;
+}
+#projects .my-masonry-grid_column {
+  background-clip: padding-box;
 }
 #projects .card {
+  max-width: 500px;
+  margin: auto;
   margin-bottom: 20px;
-  padding: 20px 0px;
-  border-radius: 25px;
-  max-width: 400px;
+  padding: 20px 15px;
+  border-radius: 30px;
 }
-#projects .card .header {
+#projects .header {
+  margin-bottom: 10px;
+}
+#projects .header a {
   display: flex;
   align-items: center;
-  padding: 10px;
-  margin-bottom: 15px;
 }
-#projects .card .header img {
+#projects .header img {
   width: 40px;
   margin: 0px 8px;
 }
-#projects .card .details {
-  padding: 10px;
-  margin: 10px 0px;
+#projects .details {
+  margin-top: 20px;
+  margin-bottom: 25px;
   text-align: center;
 }
-#projects .card .details p {
-  margin-bottom: 15px;
+#projects .details > p {
+  margin-bottom: 20px;
   font-size: 18px;
 }
-#projects .card .details .skills {
+#projects .details .skills {
+  position: relative;
   display: flex;
   justify-content: space-around;
 }
-#projects .card .details .skills img {
+#projects .details .skills .icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#projects .details .skills .icon img {
   width: 40px;
   padding: 5px;
   border-radius: 10px;
   background-color: white;
+  transition: transform 300ms;
 }
-#projects .card .details .skills p {
-  display: none;
+#projects .details .skills .icon p {
+  position: absolute;
+  top: 40px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 300ms;
 }
-#projects .card .links {
+#projects .details .skills .icon:hover img {
+  transform: translateY(-10px);
+}
+#projects .details .skills .icon:hover p {
+  opacity: 1;
+}
+#projects .links {
   display: flex;
   justify-content: space-around;
 }
-#projects .card .links button {
+#projects .links button {
   padding: 10px 25px;
   border: none;
   border-radius: 30px;
   font-size: 20px;
   color: white;
   background-color: #262626;
+  box-shadow: inset 0 0 0 0 #00bda4;
+  transition: ease-out 0.4s;
+}
+#projects .links button:hover {
+  box-shadow: inset 200px 0 0 0 #00bda4;
 }
 
+@media (min-width: 1024px) {
+  #projects {
+    padding-bottom: 50px;
+  }
+  #projects h1 {
+    margin: 50px 0px;
+    font-size: 40px;
+  }
+  #projects .header {
+    margin-bottom: 25px;
+    font-size: 20px;
+  }
+  #projects .header img {
+    width: 50px;
+  }
+  #projects .details > p {
+    font-size: 20px;
+  }
+  #projects .details .skills .icon img {
+    width: 50px;
+    padding: 5px;
+  }
+  #projects .details .skills .icon p {
+    font-size: 16px;
+  }
+  #projects .details .skills .icon:hover img {
+    transform: translateY(-15px);
+  }
+}
 .max-width, #contact .container {
   max-width: clamp(10px, 100%, 1200px);
 }

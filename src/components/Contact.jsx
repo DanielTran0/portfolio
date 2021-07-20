@@ -103,7 +103,7 @@ const Contact = () => {
 
 						<ul className='links'>
 							<li>
-								<a href='mailto:danieltran770@gmail.com'>
+								<a href='mailto:danieltran770@gmail.com' target='#blank'>
 									<img src={emailIcon} alt='icon' />
 									danieltran770@gmail.com
 								</a>

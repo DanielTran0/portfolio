@@ -13,7 +13,6 @@ const ProjectCard = ({ info }) => {
 		code,
 		site,
 		font,
-		fontSize,
 		cardColor,
 	} = info;
 
@@ -28,23 +27,18 @@ const ProjectCard = ({ info }) => {
 	return (
 		<div className='card' style={{ backgroundColor: cardColor }}>
 			<div className='header'>
-				<a href={site}>
+				<a href={site} target='#blank' style={{ fontFamily: font }}>
 					<img src={icon} alt='icon' />
+					<h2>{title}</h2>
 				</a>
-				<h2>
-					<a href={site} style={{ fontFamily: font, fontSize }}>
-						{title}
-					</a>
-				</h2>
 			</div>
 
 			<Carousel
 				className='carousel'
 				dynamicHeight
-				autoPlay
-				stopOnHover
-				interval={5000}
+				emulateTouch
 				infiniteLoop
+				interval={3000}
 				showThumbs={false}
 				showStatus={false}
 			>
@@ -59,9 +53,10 @@ const ProjectCard = ({ info }) => {
 			<div className='links'>
 				<button type='button'>
 					<a href={code} target='#blank'>
-						Code
+						Repo
 					</a>
 				</button>
+
 				<button type='button'>
 					<a href={site} target='#blank'>
 						Site

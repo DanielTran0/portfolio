@@ -1,18 +1,20 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useMediaQuery } from 'react-responsive';
 import SkillIcon from './SkillIcon';
 import skillImages from '../util/loadSkillImages';
 import animations from '../util/animations';
 
 const Skills = () => {
+	const isNotDesktop = useMediaQuery({ maxWidth: 768 });
 	const controls1 = useAnimation();
 	const controls2 = useAnimation();
 	const controls3 = useAnimation();
 	const [ref1, inView1] = useInView();
 	const [ref2, inView2] = useInView();
 	const [ref3, inView3] = useInView();
-	const animation1 = animations.up(0.5, 0);
+	const animation1 = animations.up(0.5, isNotDesktop ? 0 : 1);
 	const animationProps = {
 		variants: animation1,
 		initial: animation1.start,

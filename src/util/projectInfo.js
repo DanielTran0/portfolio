@@ -37,7 +37,7 @@ const main = [
 		code: 'https://github.com/DanielTran0/message-board',
 		site: 'https://boiling-mesa-64968.herokuapp.com/',
 		font: 'Montserrat',
-		cardColor: 'hsla(300, 100%, 30%, 1)',
+		cardColor: 'hsla(301, 100%, 20%, 1)',
 	},
 	{
 		icon: waldoIcon,
@@ -55,11 +55,10 @@ const main = [
 		title: 'Game Inventory',
 		images: [game1, game2],
 		description: 'Track game titles, developers and genres.',
-		skills: [PostgreSQL, Express, Node, Pug, Sass],
+		skills: [Express, Node, PostgreSQL, Pug, Sass],
 		code: 'https://github.com/DanielTran0/game-inventory',
 		site: 'https://rocky-shelf-43502.herokuapp.com/',
 		font: "'Press Start 2P'",
-		fontSize: '18px',
 		cardColor: 'hsla(90, 73%, 33%, 1)',
 	},
 ];
