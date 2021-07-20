@@ -1,14 +1,26 @@
 @import './util';
 
 .intro {
-	padding: 15px;
-	padding-bottom: 40px;
 	border-bottom-right-radius: 80px;
 	background-color: $blue;
 
+	.main {
+		@extend .max-width;
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		margin: auto;
+		padding: 15px;
+		padding-bottom: 40px;
+	}
+
+	.text {
+		max-width: 300px;
+	}
+
 	h1 {
 		margin-bottom: 20px;
-		font-size: 28px;
+		font-size: 29px;
 	}
 
 	h3 {
@@ -18,12 +30,63 @@
 	}
 
 	button {
-		margin-bottom: 25px;
+		margin-bottom: 30px;
 		padding: 15px 25px;
 		border-radius: 30px;
-		border: none;
 		color: white;
 		font-size: 18px;
+		border: none;
 		background-color: $green;
+		transition: transform 300ms;
+
+		&:hover {
+			transform: scale(1.1);
+			background-color: transparent;
+			border: thin solid $green;
+		}
+	}
+
+	img {
+		max-width: clamp(200px, 100%, 400px);
+	}
+}
+
+@media (min-width: 730px) {
+	.intro {
+		button {
+			margin-bottom: 20px;
+		}
+	}
+}
+
+@media (min-width: 1024px) {
+	.intro {
+		padding: 130px 0px;
+
+		.main {
+			flex-wrap: nowrap;
+		}
+
+		.text {
+			max-width: 500px;
+		}
+
+		h1 {
+			font-size: 50px;
+			margin-bottom: 50px;
+		}
+
+		h3 {
+			font-size: 24px;
+			margin-bottom: 50px;
+		}
+
+		button {
+			font-size: 22px;
+		}
+
+		img {
+			max-width: 570px;
+		}
 	}
 }

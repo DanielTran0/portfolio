@@ -36,29 +36,30 @@ const Navbar = () => {
 
 	return (
 		<header id='navbar'>
-			<img src={favicon} alt='logo' />
+			<div className='main'>
+				<img src={favicon} alt='logo' />
 
-			{isNotDesktop && (
-				<button className='menuBar' type='button' onClick={toggleMenu}>
-					<img src={isOpen ? close : menu} alt='menu' />
-				</button>
-			)}
-
-			{!isNotDesktop && <nav className='desktop'>{navLinks}</nav>}
-
-			<AnimatePresence>
-				{isOpen && isNotDesktop && (
-					<motion.nav
-						className='mobile'
-						initial={{ y: -200 }}
-						animate={{ y: 0 }}
-						transition={{ type: 'tween', duration: 0.4 }}
-						exit={{ y: -200 }}
-					>
-						{navLinks}
-					</motion.nav>
+				{isNotDesktop && (
+					<button className='menuBar' type='button' onClick={toggleMenu}>
+						<img src={isOpen ? close : menu} alt='menu' />
+					</button>
 				)}
-			</AnimatePresence>
+
+				{!isNotDesktop && <nav className='desktop'>{navLinks}</nav>}
+				<AnimatePresence>
+					{isOpen && isNotDesktop && (
+						<motion.nav
+							className='mobile'
+							initial={{ y: -200 }}
+							animate={{ y: 0 }}
+							transition={{ type: 'tween', duration: 0.4 }}
+							exit={{ y: -200 }}
+						>
+							{navLinks}
+						</motion.nav>
+					)}
+				</AnimatePresence>
+			</div>
 		</header>
 	);
 };

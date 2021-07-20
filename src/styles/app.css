@@ -34,6 +34,10 @@ img {
   height: auto;
 }
 
+.max-width {
+  max-width: clamp(10px, 100%, 1200px);
+}
+
 @font-face {
   font-family: "mortal_kombatmk11";
   src: url("/src/styles/fonts/mk/mortal-kombat-mk11-webfont.woff") format("woff");
@@ -54,17 +58,16 @@ a {
   color: inherit;
   text-decoration: none;
 }
-a:hover {
-  text-decoration: underline;
-}
 
+button {
+  cursor: pointer;
+}
 button a:hover {
   text-decoration: none;
 }
 
-.section-1 {
-  border-bottom-right-radius: 80px;
-  background-color: #354a5f;
+.max-width {
+  max-width: clamp(10px, 100%, 1200px);
 }
 
 .section-3 {
@@ -77,20 +80,28 @@ button a:hover {
   background-color: #354a5f;
 }
 
+.max-width, #navbar .main {
+  max-width: clamp(10px, 100%, 1200px);
+}
+
 #navbar {
+  background-color: #354a5f;
+}
+#navbar .main {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: auto;
   padding: 15px;
   margin-bottom: -1px;
-  background-color: #354a5f;
 }
-#navbar img {
-  z-index: 1;
+#navbar .main img {
+  z-index: 2;
   width: 35px;
+  background-color: transparent;
 }
 #navbar .menuBar {
-  z-index: 1;
+  z-index: 2;
   border: none;
   background-color: transparent;
 }
@@ -98,6 +109,7 @@ button a:hover {
   width: 22px;
 }
 #navbar nav.mobile {
+  z-index: 1;
   position: absolute;
   top: 0;
   left: 0;
@@ -115,20 +127,58 @@ button a:hover {
   display: flex;
 }
 #navbar nav.desktop ul li {
-  margin-right: 15px;
+  margin-right: 35px;
   color: #ababab;
-  font-size: 20px;
+  font-size: 24px;
+}
+#navbar a {
+  position: relative;
+  padding-bottom: 5px;
+}
+#navbar a:hover {
+  color: white;
+}
+#navbar a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #00bda4;
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+  opacity: 1;
+  transform: scale(0);
+  transform-origin: center;
+}
+#navbar a:hover::after,
+#navbar a:focus::after {
+  transform: scale(1);
+}
+
+.max-width, .intro .main {
+  max-width: clamp(10px, 100%, 1200px);
 }
 
 .intro {
-  padding: 15px;
-  padding-bottom: 40px;
   border-bottom-right-radius: 80px;
   background-color: #354a5f;
 }
+.intro .main {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 15px;
+  padding-bottom: 40px;
+}
+.intro .text {
+  max-width: 300px;
+}
 .intro h1 {
   margin-bottom: 20px;
-  font-size: 28px;
+  font-size: 29px;
 }
 .intro h3 {
   margin-bottom: 20px;
@@ -136,15 +186,54 @@ button a:hover {
   color: #ababab;
 }
 .intro button {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   padding: 15px 25px;
   border-radius: 30px;
-  border: none;
   color: white;
   font-size: 18px;
+  border: none;
   background-color: #00bda4;
+  transition: transform 300ms;
+}
+.intro button:hover {
+  transform: scale(1.1);
+  background-color: transparent;
+  border: thin solid #00bda4;
+}
+.intro img {
+  max-width: clamp(200px, 100%, 400px);
 }
 
+@media (min-width: 730px) {
+  .intro button {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .intro {
+    padding: 130px 0px;
+  }
+  .intro .main {
+    flex-wrap: nowrap;
+  }
+  .intro .text {
+    max-width: 500px;
+  }
+  .intro h1 {
+    font-size: 50px;
+    margin-bottom: 50px;
+  }
+  .intro h3 {
+    font-size: 24px;
+    margin-bottom: 50px;
+  }
+  .intro button {
+    font-size: 22px;
+  }
+  .intro img {
+    max-width: 570px;
+  }
+}
 #skills-section {
   padding: 10px;
 }
@@ -187,6 +276,10 @@ button a:hover {
   padding: 5px;
   border-radius: 10px;
   background-color: white;
+}
+
+.max-width {
+  max-width: clamp(10px, 100%, 1200px);
 }
 
 #projects {
@@ -251,6 +344,10 @@ button a:hover {
   font-size: 20px;
   color: white;
   background-color: #262626;
+}
+
+.max-width {
+  max-width: clamp(10px, 100%, 1200px);
 }
 
 #contact {

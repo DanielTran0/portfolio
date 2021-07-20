@@ -27,7 +27,7 @@ const Skills = () => {
 	const misc = [Git, GitHub, Jest, Heroku, Netlify, FireBase];
 
 	return (
-		<div id='skills-section'>
+		<section id='skills-section'>
 			<h1>Skills & Tools</h1>
 
 			<div className='groups'>
@@ -58,7 +58,7 @@ const Skills = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 

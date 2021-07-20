@@ -1,20 +1,26 @@
 @import './util';
 
 #navbar {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 15px;
-	margin-bottom: -1px;
 	background-color: $blue;
 
-	img {
-		z-index: 1;
-		width: 35px;
+	.main {
+		@extend .max-width;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: auto;
+		padding: 15px;
+		margin-bottom: -1px;
+
+		img {
+			z-index: 2;
+			width: 35px;
+			background-color: transparent;
+		}
 	}
 
 	.menuBar {
-		z-index: 1;
+		z-index: 2;
 		border: none;
 		background-color: transparent;
 
@@ -24,6 +30,7 @@
 	}
 
 	nav.mobile {
+		z-index: 1;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -46,10 +53,39 @@
 			display: flex;
 
 			li {
-				margin-right: 15px;
+				margin-right: 35px;
 				color: $greyText;
-				font-size: 20px;
+				font-size: 24px;
 			}
 		}
+	}
+
+	a {
+		position: relative;
+		padding-bottom: 5px;
+
+		&:hover {
+			color: white;
+		}
+	}
+
+	a::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: $green;
+		opacity: 0;
+		transition: opacity 300ms, transform 300ms;
+		opacity: 1;
+		transform: scale(0);
+		transform-origin: center;
+	}
+
+	a:hover::after,
+	a:focus::after {
+		transform: scale(1);
 	}
 }

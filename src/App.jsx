@@ -11,10 +11,7 @@ const App = () => {
 		<div className='app'>
 			<Navbar />
 			<Intro />
-
-			<div className='section-2'>
-				<Skills />
-			</div>
+			<Skills />
 
 			<div className='section-3'>
 				<Projects />

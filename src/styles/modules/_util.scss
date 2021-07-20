@@ -2,3 +2,7 @@ $grey: hsla(0, 0%, 15%, 1);
 $blue: hsla(210, 29%, 29%, 1);
 $green: hsla(172, 100%, 37%, 1);
 $greyText: hsla(0, 0%, 67%, 1);
+
+.max-width {
+	max-width: clamp(10px, 100%, 1200px);
+}
