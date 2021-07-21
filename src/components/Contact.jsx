@@ -4,6 +4,7 @@ import { motion, useAnimation } from 'framer-motion';
 
 import emailIcon from '../images/misc/email.svg';
 import gitHubIcon from '../images/misc/gitHub.svg';
+import linkedIn from '../images/misc/linkedIn.svg';
 
 const Contact = () => {
 	const [formValues, setFormValues] = useState({
@@ -125,6 +126,15 @@ const Contact = () => {
 								<a href='https://github.com/DanielTran0' target='#blank'>
 									<img src={gitHubIcon} alt='icon' />
 									Github
+								</a>
+							</li>
+							<li>
+								<a
+									href='https://www.linkedin.com/in/danieltran0'
+									target='#blank'
+								>
+									<img src={linkedIn} alt='icon' />
+									LinkedIn
 								</a>
 							</li>
 						</ul>
