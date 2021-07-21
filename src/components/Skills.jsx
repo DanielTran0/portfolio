@@ -1,38 +1,10 @@
-import React, { useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 import SkillIcon from './SkillIcon';
 import skillImages from '../util/loadSkillImages';
-import animations from '../util/animations';
 
 const Skills = () => {
-	const isNotDesktop = useMediaQuery({ maxWidth: 768 });
-	const controls1 = useAnimation();
-	const controls2 = useAnimation();
-	const controls3 = useAnimation();
-	const [ref1, inView1] = useInView();
-	const [ref2, inView2] = useInView();
-	const [ref3, inView3] = useInView();
-	const animation1 = animations.up(0.4, isNotDesktop ? 0 : 1);
-	const animationProps = {
-		variants: animation1,
-		initial: animation1.start,
-		animate: controls1,
-	};
-
-	useEffect(() => {
-		if (inView1) {
-			controls1.start('end');
-		}
-		if (inView2) {
-			controls2.start('end');
-		}
-		if (inView3) {
-			controls3.start('end');
-		}
-	}, [inView1, inView2, inView3]);
-
+	const isDesktop = useMediaQuery({ minWidth: 768 });
 	const {
 		CSS,
 		Express,
@@ -61,48 +33,50 @@ const Skills = () => {
 			<h1>Skills & Tools</h1>
 
 			<div className='groups'>
-				<motion.div className='front' ref={ref1} {...animationProps}>
+				<div className='front'>
 					<h2>Front End</h2>
-					<div className='group'>
+					<div
+						className='group'
+						data-aos='fade-up'
+						data-aos-delay={isDesktop ? '800' : '0'}
+					>
 						{frontEnd.map((skill) => (
 							<div className='container' key={skill}>
 								<SkillIcon imageUrl={skill} />
 							</div>
 						))}
 					</div>
-				</motion.div>
+				</div>
 
-				<motion.div
-					className='back'
-					ref={ref2}
-					{...animationProps}
-					animate={controls2}
-				>
+				<div className='back'>
 					<h2>Back End</h2>
-					<div className='group'>
+					<div
+						className='group'
+						data-aos='fade-up'
+						data-aos-delay={isDesktop ? '800' : '0'}
+					>
 						{backEnd.map((skill) => (
 							<div className='container' key={skill}>
 								<SkillIcon imageUrl={skill} />
 							</div>
 						))}
 					</div>
-				</motion.div>
+				</div>
 
-				<motion.div
-					className='misc'
-					ref={ref3}
-					{...animationProps}
-					animate={controls3}
-				>
+				<div className='misc'>
 					<h2>Miscellaneous</h2>
-					<div className='group'>
+					<div
+						className='group'
+						data-aos='fade-up'
+						data-aos-delay={isDesktop ? '800' : '0'}
+					>
 						{misc.map((skill) => (
 							<div className='container' key={skill}>
 								<SkillIcon imageUrl={skill} />
 							</div>
 						))}
 					</div>
-				</motion.div>
+				</div>
 			</div>
 		</section>
 	);

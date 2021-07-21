@@ -21,6 +21,7 @@ const Projects = () => {
 	return (
 		<div id='projects'>
 			<h1>Projects</h1>
+
 			<Masonry
 				className='group'
 				breakpointCols={breakPoints}
@@ -28,7 +29,9 @@ const Projects = () => {
 			>
 				{cardComponents}
 			</Masonry>
+
 			<h1>Pure JavaScript Projects</h1>
+
 			<Masonry
 				className='group'
 				breakpointCols={breakPoints}

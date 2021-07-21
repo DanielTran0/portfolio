@@ -143,6 +143,11 @@ button a:hover {
   transform: scale(1);
 }
 
+@media (min-width: 1024px) {
+  #navbar .main img {
+    width: 40px;
+  }
+}
 .max-width, .intro .main {
   max-width: clamp(10px, 100%, 1200px);
 }

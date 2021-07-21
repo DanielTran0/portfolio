@@ -89,3 +89,13 @@
 		transform: scale(1);
 	}
 }
+
+@media (min-width: 1024px) {
+	#navbar {
+		.main {
+			img {
+				width: 40px;
+			}
+		}
+	}
+}

@@ -71,7 +71,7 @@ const Contact = () => {
 				<div className='container'>
 					<h1>Contact</h1>
 					<p>
-						Leave me a message and I&apos;ll get back to you within 1-2 days.
+						Leave me a message and I&apos;ll get back to you within 1 to 2 days.
 					</p>
 					<div className='container2'>
 						<form noValidate autoComplete='off' onSubmit={sendEmail}>

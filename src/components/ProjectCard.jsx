@@ -29,7 +29,6 @@ const ProjectCard = ({ info, index }) => {
 			className='card'
 			style={{ backgroundColor: cardColor }}
 			data-aos={index % 2 !== 0 ? 'fade-left' : 'fade-right'}
-			data-aos-duration='1000'
 		>
 			<div className='header'>
 				<a href={site} target='#blank' style={{ fontFamily: font }}>
