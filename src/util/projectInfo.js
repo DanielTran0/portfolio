@@ -87,7 +87,7 @@ const other = [
 		icon: weatherIcon,
 		title: 'City Weather',
 		images: [weather1, weather2],
-		description: 'Check ot the weather for any city around the world.',
+		description: 'Check out the weather for any city around the world.',
 		skills: [JavaScript, HTML, CSS],
 		code: 'https://github.com/DanielTran0/City_Weather',
 		site: 'https://danieltran0.github.io/City_Weather/',
