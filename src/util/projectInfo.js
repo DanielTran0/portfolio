@@ -13,8 +13,26 @@ import waldo3 from '../images/projects/wheres-waldo/3.jpg';
 import gameIcon from '../images/projects/gameInventory/icon.svg';
 import game1 from '../images/projects/gameInventory/1.svg';
 import game2 from '../images/projects/gameInventory/2.png';
+import weatherIcon from '../images/projects/weather/icon.svg';
+import weather1 from '../images/projects/weather/1.svg';
+import weather2 from '../images/projects/weather/2.png';
+import sketchIcon from '../images/projects/sketch/icon.svg';
+import sketch1 from '../images/projects/sketch/1.svg';
+import sketch2 from '../images/projects/sketch/2.png';
 
-const { Express, MongoDB, Node, PostgreSQL, Pug, ReactImg, Sass } = skillImages;
+const {
+	Express,
+	MongoDB,
+	Node,
+	PostgreSQL,
+	Pug,
+	ReactImg,
+	Sass,
+	JavaScript,
+	HTML,
+	CSS,
+	FireBase,
+} = skillImages;
 
 const main = [
 	{
@@ -29,6 +47,17 @@ const main = [
 		cardColor: 'hsla(214, 89%, 52%, 1)',
 	},
 	{
+		icon: waldoIcon,
+		title: "Where's Waldo - MK",
+		images: [waldo1, waldo2, waldo3],
+		description: 'Can you find all the Mortal Kombat characters?',
+		skills: [ReactImg, FireBase],
+		code: 'https://github.com/DanielTran0/wheres-waldo',
+		site: 'https://wheres-waldo-eb53c.firebaseapp.com/',
+		font: 'mortal_kombatmk11',
+		cardColor: 'hsla(360, 73%, 33%, 1)',
+	},
+	{
 		icon: messageIcon,
 		title: 'Message Board',
 		images: [message1, message2],
@@ -39,17 +68,7 @@ const main = [
 		font: 'Montserrat',
 		cardColor: 'hsla(301, 100%, 20%, 1)',
 	},
-	{
-		icon: waldoIcon,
-		title: "Where's Waldo - MK",
-		images: [waldo1, waldo2, waldo3],
-		description: 'Can you find all the Mortal Kombat characters?',
-		skills: [ReactImg],
-		code: 'https://github.com/DanielTran0/wheres-waldo',
-		site: 'https://wheres-waldo-eb53c.firebaseapp.com/',
-		font: 'mortal_kombatmk11',
-		cardColor: 'hsla(360, 73%, 33%, 1)',
-	},
+
 	{
 		icon: gameIcon,
 		title: 'Game Inventory',
@@ -63,6 +82,29 @@ const main = [
 	},
 ];
 
-const carousel = [];
+const other = [
+	{
+		icon: weatherIcon,
+		title: 'City Weather',
+		images: [weather1, weather2],
+		description: 'Check ot the weather for any city around the world.',
+		skills: [JavaScript, HTML, CSS],
+		code: 'https://github.com/DanielTran0/City_Weather',
+		site: 'https://danieltran0.github.io/City_Weather/',
+		font: 'Belgrano',
+		cardColor: 'hsla(197, 75%, 58%, 1)',
+	},
+	{
+		icon: sketchIcon,
+		title: 'Etch-a-sketch',
+		images: [sketch1, sketch2],
+		description: 'Draw whatever comes to mind.',
+		skills: [JavaScript, HTML, CSS],
+		code: 'https://github.com/DanielTran0/Etch_a_Sketch',
+		site: 'https://danieltran0.github.io/Etch_a_Sketch/',
+		font: 'Sriracha',
+		cardColor: 'hsla(360, 100%, 39%, 1)',
+	},
+];
 
-export default { main, carousel };
+export default { main, other };

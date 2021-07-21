@@ -14,7 +14,7 @@ const Skills = () => {
 	const [ref1, inView1] = useInView();
 	const [ref2, inView2] = useInView();
 	const [ref3, inView3] = useInView();
-	const animation1 = animations.up(0.5, isNotDesktop ? 0 : 1);
+	const animation1 = animations.up(0.4, isNotDesktop ? 0 : 1);
 	const animationProps = {
 		variants: animation1,
 		initial: animation1.start,

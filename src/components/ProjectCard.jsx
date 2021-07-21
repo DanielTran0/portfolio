@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Carousel } from 'react-responsive-carousel';
 import SkillIcon from './SkillIcon';
 
-const ProjectCard = ({ info }) => {
+const ProjectCard = ({ info, index }) => {
 	const {
 		icon,
 		title,
@@ -25,7 +25,12 @@ const ProjectCard = ({ info }) => {
 	));
 
 	return (
-		<div className='card' style={{ backgroundColor: cardColor }}>
+		<div
+			className='card'
+			style={{ backgroundColor: cardColor }}
+			data-aos={index % 2 !== 0 ? 'fade-left' : 'fade-right'}
+			data-aos-duration='1000'
+		>
 			<div className='header'>
 				<a href={site} target='#blank' style={{ fontFamily: font }}>
 					<img src={icon} alt='icon' />
@@ -34,11 +39,12 @@ const ProjectCard = ({ info }) => {
 			</div>
 
 			<Carousel
-				className='carousel'
 				dynamicHeight
 				emulateTouch
 				infiniteLoop
-				interval={3000}
+				autoPlay
+				stopOnHover
+				interval={5000}
 				showThumbs={false}
 				showStatus={false}
 			>
@@ -80,6 +86,7 @@ ProjectCard.propTypes = {
 		fontSize: PropTypes.string,
 		cardColor: PropTypes.string.isRequired,
 	}).isRequired,
+	index: PropTypes.number.isRequired,
 };
 
 export default ProjectCard;
