@@ -10,12 +10,14 @@
 
 html {
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 body {
 	font-family: 'Montserrat', sans-serif;
 	color: white;
 	background-color: $grey;
+	overflow-x: hidden;
 }
 
 a {

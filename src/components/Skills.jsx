@@ -4,7 +4,13 @@ import SkillIcon from './SkillIcon';
 import skillImages from '../util/loadSkillImages';
 
 const Skills = () => {
-	const isDesktop = useMediaQuery({ minWidth: 768 });
+	const inIntroViewHeight1 = useMediaQuery({ minHeight: 770, maxWidth: 619 });
+	const inIntroViewHeight2 = useMediaQuery({ minHeight: 611, maxWidth: 916 });
+	const inIntroViewHeightAll = useMediaQuery({
+		minHeight: 611,
+		minWidth: 922,
+	});
+
 	const {
 		CSS,
 		Express,
@@ -38,7 +44,11 @@ const Skills = () => {
 					<div
 						className='group'
 						data-aos='fade-up'
-						data-aos-delay={isDesktop ? '800' : '0'}
+						data-aos-delay={
+							inIntroViewHeight1 || inIntroViewHeight2 || inIntroViewHeightAll
+								? '600'
+								: '0'
+						}
 					>
 						{frontEnd.map((skill) => (
 							<div className='container' key={skill}>
@@ -53,7 +63,9 @@ const Skills = () => {
 					<div
 						className='group'
 						data-aos='fade-up'
-						data-aos-delay={isDesktop ? '800' : '0'}
+						data-aos-delay={
+							inIntroViewHeight2 || inIntroViewHeightAll ? '600' : '0'
+						}
 					>
 						{backEnd.map((skill) => (
 							<div className='container' key={skill}>
@@ -68,7 +80,7 @@ const Skills = () => {
 					<div
 						className='group'
 						data-aos='fade-up'
-						data-aos-delay={isDesktop ? '800' : '0'}
+						data-aos-delay={inIntroViewHeightAll ? '600' : '0'}
 					>
 						{misc.map((skill) => (
 							<div className='container' key={skill}>
