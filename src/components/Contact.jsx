@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import { motion, useAnimation } from 'framer-motion';
 
 import emailIcon from '../images/misc/email.svg';
 import gitHubIcon from '../images/misc/gitHub.svg';
@@ -11,10 +12,19 @@ const Contact = () => {
 		message: '',
 	});
 	const [formErrors, setFormErrors] = useState({});
+	const succussControl = useAnimation();
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setFormValues((prevState) => ({ ...prevState, [name]: value }));
+	};
+
+	const handleSuccussMessage = () => {
+		succussControl.start({
+			opacity: [0, 1, 0],
+			y: [0, -50, 0],
+			transition: { duration: 5, times: [0, 0.2, 1] },
+		});
 	};
 
 	const checkFormErrors = () => {
@@ -60,6 +70,7 @@ const Contact = () => {
 				'user_olf5BtGVMwQ0uX6RzS5cL'
 			);
 			e.target.reset();
+			handleSuccussMessage();
 		} catch (error) {
 			console.log(error);
 		}
@@ -70,9 +81,11 @@ const Contact = () => {
 			<div className='shell'>
 				<div className='container'>
 					<h1>Contact</h1>
+
 					<p>
 						Leave me a message and I&apos;ll get back to you within 1 to 2 days.
 					</p>
+
 					<div className='container2'>
 						<form noValidate autoComplete='off' onSubmit={sendEmail}>
 							<input
@@ -116,6 +129,14 @@ const Contact = () => {
 							</li>
 						</ul>
 					</div>
+
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={succussControl}
+						className='sent'
+					>
+						Your Message Has Been Sent!
+					</motion.div>
 				</div>
 			</div>
 		</section>

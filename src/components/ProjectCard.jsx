@@ -41,9 +41,9 @@ const ProjectCard = ({ info, index }) => {
 				dynamicHeight
 				emulateTouch
 				infiniteLoop
-				autoPlay
-				stopOnHover
-				interval={5000}
+				// autoPlay
+				// stopOnHover
+				// interval={5000}
 				showThumbs={false}
 				showStatus={false}
 			>

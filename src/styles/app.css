@@ -535,6 +535,17 @@ button a:hover {
   color: white;
   text-decoration: none;
 }
+#contact .sent {
+  position: relative;
+  width: fit-content;
+  padding: 10px 20px;
+  margin: auto;
+  font-weight: bold;
+  border: thin solid #4bb643;
+  background-color: #4bb643;
+  border-radius: 50px;
+  opacity: 0;
+}
 
 @media (min-width: 1024px) {
   #contact h1 {
@@ -544,6 +555,9 @@ button a:hover {
   #contact p {
     margin-bottom: 20px;
     font-size: 20px;
+  }
+  #contact .sent {
+    font-size: 18px;
   }
 }
 
