@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Carousel } from 'react-responsive-carousel';
+import { useInView } from 'react-intersection-observer';
 import SkillIcon from './SkillIcon';
 
 const ProjectCard = ({ info, index }) => {
@@ -15,6 +16,7 @@ const ProjectCard = ({ info, index }) => {
 		font,
 		cardColor,
 	} = info;
+	const [ref, inView] = useInView();
 
 	const imageComponents = images.map((image) => (
 		<img src={image} alt={title} key={title} />
@@ -29,6 +31,7 @@ const ProjectCard = ({ info, index }) => {
 			className='card'
 			style={{ backgroundColor: cardColor }}
 			data-aos={index % 2 !== 0 ? 'fade-left' : 'fade-right'}
+			ref={ref}
 		>
 			<div className='header'>
 				<a href={site} target='#blank' style={{ fontFamily: font }}>
@@ -41,9 +44,9 @@ const ProjectCard = ({ info, index }) => {
 				dynamicHeight
 				emulateTouch
 				infiniteLoop
-				// autoPlay
-				// stopOnHover
-				// interval={5000}
+				autoPlay={inView}
+				stopOnHover
+				interval={inView && 6000}
 				showThumbs={false}
 				showStatus={false}
 			>
