@@ -479,6 +479,10 @@ button a:hover {
   padding: 10px;
   max-width: 600px;
 }
+#contact form input,
+#contact form textarea {
+  outline: none;
+}
 #contact form .field {
   width: 100%;
   padding: 10px 0px;
